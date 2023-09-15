@@ -25,6 +25,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./services/${{ matrix.service }}
+          context: '{{defaultContext}}:services/${{ matrix.service }}'
           push: true
           tags: starsoi/${{ matrix.service }}:latest
