@@ -27,4 +27,4 @@ jobs:
         with:
           context: '{{defaultContext}}:services/${{ matrix.service }}'
           push: true
-          tags: starsoi/${{ matrix.service }}:latest
+          tags: starsoi/udaconnect-${{ matrix.service }}:latest
