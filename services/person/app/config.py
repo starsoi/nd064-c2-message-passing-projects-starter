@@ -7,6 +7,20 @@ DB_HOST = os.environ["DB_HOST"]
 DB_PORT = os.environ["DB_PORT"]
 DB_NAME = os.environ["DB_NAME"]
 
+SERVICE_URL_CONNECTION = (
+    os.environ["UDACONNECT_CONNECTION_HOST"]
+    + ":"
+    + os.environ["UDACONNECT_CONNECTION_PORT"]
+)
+SERVICE_URL_LOCATION = (
+    os.environ["UDACONNECT_LOCATION_HOST"]
+    + ":"
+    + os.environ["UDACONNECT_LOCATION_PORT"]
+)
+SERVICE_URL_PERSON = (
+    os.environ["UDACONNECT_PERSON_HOST"] + ":" + os.environ["UDACONNECT_PERSON_PORT"]
+)
+
 
 class BaseConfig:
     CONFIG_NAME = "base"
