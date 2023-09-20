@@ -11,6 +11,8 @@ from flask import request
 from flask_accepts import accepts, responds
 from flask_restx import Namespace, Resource
 from typing import Optional, List
+import requests
+from app.config import SERVICE_URL_CONNECTION, SERVICE_URL_LOCATION, SERVICE_URL_PERSON
 
 DATE_FORMAT = "%Y-%m-%d"
 
@@ -27,14 +29,13 @@ class LocationResource(Resource):
     @accepts(schema=LocationSchema)
     @responds(schema=LocationSchema)
     def post(self) -> Location:
-        request.get_json()
-        location: Location = LocationService.create(request.get_json())
-        return location
+        r = requests.post(SERVICE_URL_LOCATION + '/locations', data=request.get_json())
+        return r
 
     @responds(schema=LocationSchema)
     def get(self, location_id) -> Location:
-        location: Location = LocationService.retrieve(location_id)
-        return location
+        r = requests.get(SERVICE_URL_LOCATION + f'/locations/{location_id}')
+        return r
 
 
 @api.route("/persons")
@@ -42,14 +43,13 @@ class PersonsResource(Resource):
     @accepts(schema=PersonSchema)
     @responds(schema=PersonSchema)
     def post(self) -> Person:
-        payload = request.get_json()
-        new_person: Person = PersonService.create(payload)
-        return new_person
+        r = requests.post(SERVICE_URL_PERSON + '/persons', data=request.get_json())
+        return r
 
     @responds(schema=PersonSchema, many=True)
     def get(self) -> List[Person]:
-        persons: List[Person] = PersonService.retrieve_all()
-        return persons
+        r = requests.get(SERVICE_URL_PERSON + '/persons')
+        return r
 
 
 @api.route("/persons/<person_id>")
@@ -57,8 +57,8 @@ class PersonsResource(Resource):
 class PersonResource(Resource):
     @responds(schema=PersonSchema)
     def get(self, person_id) -> Person:
-        person: Person = PersonService.retrieve(person_id)
-        return person
+        r = requests.get(SERVICE_URL_PERSON + f'/persons/{person_id}')
+        return r
 
 
 @api.route("/persons/<person_id>/connection")
@@ -68,16 +68,5 @@ class PersonResource(Resource):
 class ConnectionDataResource(Resource):
     @responds(schema=ConnectionSchema, many=True)
     def get(self, person_id) -> ConnectionSchema:
-        start_date: datetime = datetime.strptime(
-            request.args["start_date"], DATE_FORMAT
-        )
-        end_date: datetime = datetime.strptime(request.args["end_date"], DATE_FORMAT)
-        distance: Optional[int] = request.args.get("distance", 5)
-
-        results = ConnectionService.find_contacts(
-            person_id=person_id,
-            start_date=start_date,
-            end_date=end_date,
-            meters=distance,
-        )
-        return results
+        r = requests.get(SERVICE_URL_CONNECTION + f'/persons/{person_id}', params=request.args)
+        return r
