@@ -8,8 +8,16 @@ from app.connection.schemas import ConnectionSchema, LocationSchema, PersonSchem
 from geoalchemy2.functions import ST_AsText, ST_Point
 from sqlalchemy.sql import text
 
+import grpc
+from app.protos import person_pb2
+from app.protos import person_pb2_grpc
+from app.config import GRPC_URL_PERSON
+
 logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger("connection-service")
+
+grpc_channel = grpc.insecure_channel(GRPC_URL_PERSON)
+PersonService = person_pb2_grpc.PersonServiceStub(grpc)
 
 
 class ConnectionService:
@@ -33,8 +41,9 @@ class ConnectionService:
         )
 
         # Cache all users in memory for quick lookup
+
         person_map: Dict[str, Person] = {
-            person.id: person for person in PersonService.retrieve_all()
+            person.id: Person(id=person.id, first_name=person.first_name, last_name=person.last_name, company_name=person.company_name) for person in PersonService.retrieve_all()
         }
 
         # Prepare arguments for queries
