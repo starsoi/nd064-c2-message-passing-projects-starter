@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger("connection-service")
 
 grpc_channel = grpc.insecure_channel(GRPC_URL_PERSON)
-PersonService = person_pb2_grpc.PersonServiceStub(grpc)
+PersonService = person_pb2_grpc.PersonServiceStub(grpc_channel)
 
 
 class ConnectionService:
