@@ -67,5 +67,5 @@ class PersonResource(Resource):
 class ConnectionDataResource(Resource):
     @responds(schema=ConnectionSchema, many=True)
     def get(self, person_id) -> ConnectionSchema:
-        r = requests.get('http://' + SERVICE_URL_CONNECTION + f'/api/persons/{person_id}', params=request.args)
+        r = requests.get('http://' + SERVICE_URL_CONNECTION + f'/api/persons/{person_id}/connection', params=request.args)
         return r.json()
