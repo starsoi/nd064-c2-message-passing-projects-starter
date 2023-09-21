@@ -1,7 +1,3 @@
-from app.location.models import Connection, Location, Person  # noqa
-from app.location.schemas import ConnectionSchema, LocationSchema, PersonSchema  # noqa
-
-
 def register_routes(api, app, root="api"):
     from app.location.controllers import api as udaconnect_api
 
