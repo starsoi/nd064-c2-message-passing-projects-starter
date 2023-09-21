@@ -1,6 +1,5 @@
 from datetime import datetime
 
-from app.connection.models import Connection, Location, Person
 from app.connection.schemas import (
     ConnectionSchema,
 )

@@ -4,7 +4,6 @@ from typing import Dict, List
 
 from app import db
 from app.connection.models import Connection, Location, Person
-from app.connection.schemas import ConnectionSchema, LocationSchema, PersonSchema
 from geoalchemy2.functions import ST_AsText, ST_Point
 from sqlalchemy.sql import text
 

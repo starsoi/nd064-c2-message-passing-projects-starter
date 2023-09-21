@@ -1,12 +1,12 @@
 from datetime import datetime
 
-from app.person.models import Connection, Location, Person
+from app.person.models import Person
 from app.person.schemas import (
     ConnectionSchema,
     LocationSchema,
     PersonSchema,
 )
-from app.person.services import ConnectionService, LocationService, PersonService
+from app.person.services import PersonService
 from flask import request
 from flask_accepts import accepts, responds
 from flask_restx import Namespace, Resource

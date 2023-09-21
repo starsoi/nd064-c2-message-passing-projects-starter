@@ -1,12 +1,10 @@
 from datetime import datetime
 
-from app.location.models import Connection, Location, Person
+from app.location.models import Location
 from app.location.schemas import (
-    ConnectionSchema,
     LocationSchema,
-    PersonSchema,
 )
-from app.location.services import ConnectionService, LocationService, PersonService
+from app.location.services import LocationService
 from flask import request
 from flask_accepts import accepts, responds
 from flask_restx import Namespace, Resource
