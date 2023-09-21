@@ -43,7 +43,7 @@ class ConnectionService:
         # Cache all users in memory for quick lookup
 
         person_map: Dict[str, Person] = {
-            person.id: Person(id=person.id, first_name=person.first_name, last_name=person.last_name, company_name=person.company_name) for person in PersonService.retrieve_all()
+            person.id: Person(id=person.id, first_name=person.first_name, last_name=person.last_name, company_name=person.company_name) for person in PersonService.RetreaveAll()
         }
         logger.info(person_map)
 
