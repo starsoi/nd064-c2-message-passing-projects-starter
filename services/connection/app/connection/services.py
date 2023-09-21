@@ -12,7 +12,7 @@ from app.protos import person_pb2
 from app.protos import person_pb2_grpc
 from app.config import GRPC_URL_PERSON
 
-logging.basicConfig(level=logging.WARNING)
+logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger("connection-service")
 
 grpc_channel = grpc.insecure_channel(GRPC_URL_PERSON)
@@ -38,12 +38,14 @@ class ConnectionService:
             .filter(Location.creation_time >= start_date)
             .all()
         )
+        logger.info(locations)
 
         # Cache all users in memory for quick lookup
 
         person_map: Dict[str, Person] = {
             person.id: Person(id=person.id, first_name=person.first_name, last_name=person.last_name, company_name=person.company_name) for person in PersonService.retrieve_all()
         }
+        logger.info(person_map)
 
         # Prepare arguments for queries
         data = []
@@ -91,5 +93,6 @@ class ConnectionService:
                         location=location,
                     )
                 )
+        logger.info(result)
 
         return result
