@@ -32,6 +32,7 @@ class PersonsResource(Resource):
     @responds(schema=PersonSchema, many=True)
     def get(self) -> List[Person]:
         persons: List[Person] = PersonService.retrieve_all()
+        print(persons)
         return persons
 
 
