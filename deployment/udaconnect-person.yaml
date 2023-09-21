@@ -6,7 +6,7 @@ metadata:
   name: udaconnect-person
 spec:
   ports:
-  - name: REST
+  - name: rest
     port: 5000
     targetPort: 5000
   selector:
@@ -20,7 +20,7 @@ metadata:
   name: udaconnect-person-grpc
 spec:
   ports:
-  - name: GRPC
+  - name: grpc
     port: 5005
     targetPort: 5005
   selector:
