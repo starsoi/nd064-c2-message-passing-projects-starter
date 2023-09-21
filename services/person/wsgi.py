@@ -14,5 +14,8 @@ person_pb2_grpc.add_PersonServiceServicer_to_server(PersonService(), grpc_server
 grpc_server.add_insecure_port("localhost:5005")
 
 if __name__ == "__main__":
+    print('gRPC server starting...')
     grpc_server.start()
+    print('gRPC server started')
     app.run(debug=True)
+    print('app exit.')
