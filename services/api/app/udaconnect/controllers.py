@@ -29,12 +29,14 @@ class LocationResource(Resource):
     @responds(schema=LocationSchema)
     def post(self) -> Location:
         r = requests.post('http://' + SERVICE_URL_LOCATION + '/api/locations', data=request.get_json())
-        return r.json()
+        schema = LocationSchema()
+        return schema.load(r.json())
 
     @responds(schema=LocationSchema)
     def get(self, location_id) -> Location:
         r = requests.get('http://' + SERVICE_URL_LOCATION + f'/api/locations/{location_id}')
-        return r.json()
+        schema = LocationSchema()
+        return schema.load(r.json())
 
 
 @api.route("/persons")
@@ -70,5 +72,4 @@ class ConnectionDataResource(Resource):
         r = requests.get('http://' + SERVICE_URL_CONNECTION + f'/api/persons/{person_id}/connection', params=request.args)
         schema = ConnectionSchema(many=True)
         result = schema.load(r.json())
-        print(result)
         return result
