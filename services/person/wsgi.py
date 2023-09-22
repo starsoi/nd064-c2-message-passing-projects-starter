@@ -12,9 +12,7 @@ grpc_server.add_insecure_port("[::]:5005")
 grpc_server.start()
 
 from app import create_app
-print('create app')
 app = create_app(os.getenv("FLASK_ENV") or "test")
-
 
 if __name__ == "__main__":
     app.run(debug=True)

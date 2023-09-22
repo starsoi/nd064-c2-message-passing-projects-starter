@@ -9,17 +9,6 @@ spec:
   - name: rest
     port: 5000
     targetPort: 5000
-  selector:
-    service: udaconnect-person
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    service: udaconnect-person-grpc
-  name: udaconnect-person-grpc
-spec:
-  ports:
   - name: grpc
     port: 5005
     targetPort: 5005
