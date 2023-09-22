@@ -71,4 +71,4 @@ class ConnectionDataResource(Resource):
         schema = ConnectionSchema(many=True)
         result = schema.load(r.json())
         print(result)
-        return r.json()
+        return result
