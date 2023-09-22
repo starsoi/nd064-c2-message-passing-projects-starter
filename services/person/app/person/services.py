@@ -15,6 +15,8 @@ logger = logging.getLogger("person-service")
 
 
 class PersonService(person_pb2_grpc.PersonServiceServicer):
+    app = None
+
     @staticmethod
     def create(person: Dict) -> Person:
         new_person = Person()
@@ -37,7 +39,8 @@ class PersonService(person_pb2_grpc.PersonServiceServicer):
         return db.session.query(Person).all()
 
     def RetreaveAll(self, request, context):
-        query_results = PersonService.retrieve_all()
+        with PersonService.app.app_context():
+            query_results = PersonService.retrieve_all()
         results = [{'id': person.id, 'first_name': person.first_name, 'last_name': person.last_name, 'company_name': person.company_name} for person in query_results]
         return person_pb2.Persons(results)
 
