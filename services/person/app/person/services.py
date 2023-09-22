@@ -42,5 +42,5 @@ class PersonService(person_pb2_grpc.PersonServiceServicer):
         with PersonService.app.app_context():
             query_results = PersonService.retrieve_all()
         results = [{'id': person.id, 'first_name': person.first_name, 'last_name': person.last_name, 'company_name': person.company_name} for person in query_results]
-        return person_pb2.Persons(results)
+        return person_pb2.Persons(persons=results)
 
