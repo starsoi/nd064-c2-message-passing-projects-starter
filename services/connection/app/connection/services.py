@@ -41,9 +41,11 @@ class ConnectionService:
         logger.info(locations)
 
         # Cache all users in memory for quick lookup
+        all_persons = PersonService.RetreaveAll(person_pb2.Empty()).persons
+        logger.info(all_persons)
 
         person_map: Dict[str, Person] = {
-            person.id: Person(id=person.id, first_name=person.first_name, last_name=person.last_name, company_name=person.company_name) for person in PersonService.RetreaveAll(person_pb2.Empty())
+            person.id: Person(id=person.id, first_name=person.first_name, last_name=person.last_name, company_name=person.company_name) for person in all_persons
         }
         logger.info(person_map)
 
