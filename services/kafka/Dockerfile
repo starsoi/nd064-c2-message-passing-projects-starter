@@ -1,4 +1,4 @@
-FROM amazoncorretto:21.0.0-al2023-headless
+FROM amazoncorretto:21-alpine3.18
 RUN apk --update add openssl wget unzip && rm -rf /var/cache/apk/*
 
 WORKDIR /kafka
