@@ -34,6 +34,7 @@ class LocationResource(Resource):
     def post(self) -> Location:
         # r = requests.post('http://' + SERVICE_URL_LOCATION + '/api/locations', data=request.get_json())
         kafka_producer.send('udaconnect-location', request.get_data())
+        kafka_producer.flush()
         schema = LocationSchema()
         return schema.load(request.get_json())
 
