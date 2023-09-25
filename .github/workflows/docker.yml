@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix: 
-        service: [connection, location, person, api]
+        service: [connection, location, person, api, kafka]
     steps:
       -
         name: Set up Docker Buildx
