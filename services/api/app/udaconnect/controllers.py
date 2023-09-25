@@ -11,6 +11,7 @@ from flask_accepts import accepts, responds
 from flask_restx import Namespace, Resource
 from typing import Optional, List
 import requests
+import json
 from app.config import SERVICE_URL_CONNECTION, SERVICE_URL_LOCATION, SERVICE_URL_PERSON, SERVICE_URL_KAFKA
 
 DATE_FORMAT = "%Y-%m-%d"
@@ -48,6 +49,7 @@ class PersonsResource(Resource):
     @accepts(schema=PersonSchema)
     @responds(schema=PersonSchema)
     def post(self) -> Person:
+        print(request.get_json())
         r = requests.post('http://' + SERVICE_URL_PERSON + '/api/persons', data=request.get_json())
         return r.json()
 
