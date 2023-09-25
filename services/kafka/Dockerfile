@@ -1,5 +1,5 @@
 FROM amazoncorretto:21-alpine3.18
-RUN apk --update add openssl wget unzip && rm -rf /var/cache/apk/*
+RUN apk --update add bash openssl wget unzip && rm -rf /var/cache/apk/*
 
 WORKDIR /kafka
 
