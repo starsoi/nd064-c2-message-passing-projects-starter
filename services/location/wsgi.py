@@ -18,8 +18,8 @@ def kafka_worker():
         with app.app_context():
             LocationService.create(json.loads(message.decode('utf-8')))
 
+t = threading.Thread(target=kafka_worker)
+t.start()
 
 if __name__ == "__main__":
-    t = threading.Thread(target=kafka_worker)
-    t.start()
     app.run(debug=True)
