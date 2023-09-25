@@ -6,6 +6,6 @@ RUN wget https://www.apache.org/dyn/closer.cgi?path=/kafka/3.5.0/kafka_2.13-3.5.
 RUN tar -xzf kafka_2.13-3.5.0.tgz
 
 WORKDIR ./kafka_2.13-3.5.0
-COPY start-kafak.sh .
+COPY start-kafka.sh .
 
 CMD start-kafka.sh
