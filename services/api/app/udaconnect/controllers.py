@@ -11,12 +11,15 @@ from flask_accepts import accepts, responds
 from flask_restx import Namespace, Resource
 from typing import Optional, List
 import requests
-from app.config import SERVICE_URL_CONNECTION, SERVICE_URL_LOCATION, SERVICE_URL_PERSON
+from app.config import SERVICE_URL_CONNECTION, SERVICE_URL_LOCATION, SERVICE_URL_PERSON, SERVICE_URL_KAFKA
 
 DATE_FORMAT = "%Y-%m-%d"
 
 api = Namespace("UdaConnect", description="Connections via geolocation.")  # noqa
 
+
+from kafka import KafkaProducer
+kafka_producer = KafkaProducer(bootstrap_servers=SERVICE_URL_KAFKA)
 
 # TODO: This needs better exception handling
 
@@ -28,9 +31,10 @@ class LocationResource(Resource):
     @accepts(schema=LocationSchema)
     @responds(schema=LocationSchema)
     def post(self) -> Location:
-        r = requests.post('http://' + SERVICE_URL_LOCATION + '/api/locations', data=request.get_json())
+        # r = requests.post('http://' + SERVICE_URL_LOCATION + '/api/locations', data=request.get_json())
+        kafka_producer.send('udaconnect-location', request.get_data())
         schema = LocationSchema()
-        return schema.load(r.json())
+        return schema.load(request.get_json())
 
     @responds(schema=LocationSchema)
     def get(self, location_id) -> Location:
