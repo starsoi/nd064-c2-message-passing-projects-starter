@@ -51,7 +51,7 @@ class PersonsResource(Resource):
     @responds(schema=PersonSchema)
     def post(self) -> Person:
         print(request.get_json())
-        r = requests.post('http://' + SERVICE_URL_PERSON + '/api/persons', data=request.get_json())
+        r = requests.post('http://' + SERVICE_URL_PERSON + '/api/persons', json=request.get_json())
         return r.json()
 
     @responds(schema=PersonSchema, many=True)
