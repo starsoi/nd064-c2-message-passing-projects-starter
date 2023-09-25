@@ -76,4 +76,5 @@ class ConnectionDataResource(Resource):
         r = requests.get('http://' + SERVICE_URL_CONNECTION + f'/api/persons/{person_id}/connection', params=request.args)
         schema = ConnectionSchema(many=True)
         result = schema.load(r.json())
+        print(result)
         return result
