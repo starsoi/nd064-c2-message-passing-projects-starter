@@ -79,17 +79,21 @@ Afterwards, you can test that `kubectl` works by running a command like `kubectl
 1. `kubectl apply -f deployment/db-configmap.yaml` - Set up environment variables for the pods
 2. `kubectl apply -f deployment/db-secret.yaml` - Set up secrets for the pods
 3. `kubectl apply -f deployment/postgres.yaml` - Set up a Postgres database running PostGIS
-4. `kubectl apply -f deployment/udaconnect-api.yaml` - Set up the service and deployment for the API
-5. `kubectl apply -f deployment/udaconnect-app.yaml` - Set up the service and deployment for the web app
-6. `sh scripts/run_db_command.sh <POD_NAME>` - Seed your database against the `postgres` pod. (`kubectl get pods` will give you the `POD_NAME`)
+4. `kubectl apply -f deployment/udaconnect-app.yaml` - Set up the service and deployment for the web app
+5. `kubectl apply -f deployment/udaconnect-api.yaml` - Set up the service and deployment for the API Gateway
+6. `kubectl apply -f deployment/udaconnect-connection.yaml` - Set up the service and deployment for the Connection microservice
+7. `kubectl apply -f deployment/udaconnect-kafka.yaml` - Set up the service and deployment for the Kafka message queue
+8. `kubectl apply -f deployment/udaconnect-location.yaml` - Set up the service and deployment for the Location microservice
+9. `kubectl apply -f deployment/udaconnect-person.yaml` - Set up the service and deployment for the Person microservice
+10. `sh scripts/run_db_command.sh <POD_NAME>` - Seed your database against the `postgres` pod. (`kubectl get pods` will give you the `POD_NAME`)
 
 Manually applying each of the individual `yaml` files is cumbersome but going through each step provides some context on the content of the starter project. In practice, we would have reduced the number of steps by running the command against a directory to apply of the contents: `kubectl apply -f deployment/`.
 
 Note: The first time you run this project, you will need to seed the database with dummy data. Use the command `sh scripts/run_db_command.sh <POD_NAME>` against the `postgres` pod. (`kubectl get pods` will give you the `POD_NAME`). Subsequent runs of `kubectl apply` for making changes to deployments or services shouldn't require you to seed the database again!
 
 ### Verifying it Works
-Once the project is up and running, you should be able to see 3 deployments and 3 services in Kubernetes:
-`kubectl get pods` and `kubectl get services` - should both return `udaconnect-app`, `udaconnect-api`, and `postgres`
+Once the project is up and running, you should be able to see 7 deployments and 7 services in Kubernetes:
+`kubectl get pods` and `kubectl get services` - should both return `udaconnect-app`, `udaconnect-api`, `udaconnect-connection`, `udaconnect-location`, `udaconnect-person`, `udaconnect-kafka` and `postgres`
 
 
 These pages should also load on your web browser:
@@ -104,16 +108,13 @@ Connections to the Kubernetes services have been set up through a [NodePort](htt
 
 ## Development
 ### New Services
-New services can be created inside of the `modules/` subfolder. You can choose to write something new with Flask, copy and rework the `modules/api` service into something new, or just create a very simple Python application.
+New services can be created inside of the `services/` subfolder. You can choose to write something new with Flask, copy and rework the `modules/api` service into something new, or just create a very simple Python application.
 
 As a reminder, each module should have:
 1. `Dockerfile`
 2. Its own corresponding DockerHub repository
 3. `requirements.txt` for `pip` packages
 4. `__init__.py`
-
-### Docker Images
-`udaconnect-app` and `udaconnect-api` use docker images from `udacity/nd064-udaconnect-app` and `udacity/nd064-udaconnect-api`. To make changes to the application, build your own Docker image and push it to your own DockerHub repository. Replace the existing container registry path with your own.
 
 ## Configs and Secrets
 In `deployment/db-secret.yaml`, the secret variable is `d293aW1zb3NlY3VyZQ==`. The value is simply encoded and not encrypted -- this is ***not*** secure! Anyone can decode it to see what it is.
