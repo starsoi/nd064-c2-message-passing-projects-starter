@@ -1,0 +1,130 @@
+<mxfile host="65bd71144e">
+    <diagram id="cG4FtM1d8jGmFoGhybPx" name="Page-1">
+        <mxGraphModel dx="2490" dy="1157" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="54" value="API Gateway&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="-500" y="120" width="230" height="800" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="ConnectionService&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="211" y="730" width="230" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="LocationService&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="211" y="360" width="230" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=none;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="180" width="215" height="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Person" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="785" y="230" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Location" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="785" y="390" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="find_contacts" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="221" y="800" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="retreave" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="221" y="390" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="create" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="221" y="420" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="create new Person" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" source="14" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="PersonService&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="211" y="200" width="230" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="retreave" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="221" y="230" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="create" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="221" y="280" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="retreave_all" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="221" y="255" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="create new Location" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" source="3" target="6" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="500" y="400" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="610" y="415"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;endArrow=none;endFill=0;startArrow=classic;startFill=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" target="17" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="210" y="780" as="sourcePoint"/>
+                        <mxPoint x="210" y="250" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="50" y="610"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="43" value="retreave Person info&lt;br&gt;gRPC" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#FFFFFF;labelBackgroundColor=none;" parent="20" vertex="1" connectable="0">
+                    <mxGeometry x="-0.1573" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="REST GET" style="edgeStyle=none;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" source="22" target="17" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="REST POST" style="edgeStyle=none;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=classic;endFill=1;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" source="22" target="16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="/persons" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.service_endpoint;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-390" y="285" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="REST GET" style="edgeStyle=none;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" source="26" target="15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="/persons/&amp;lt;person_id&amp;gt;" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.service_endpoint;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-390" y="230" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="REST GET" style="edgeStyle=none;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" source="30" target="11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="Publish new location data" style="edgeStyle=none;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=classic;endFill=1;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" source="30" target="36" edge="1">
+                    <mxGeometry x="0.1856" y="8" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="/locations/&amp;lt;location_id&amp;gt;" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.service_endpoint;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-380" y="390" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="REST GET" style="edgeStyle=none;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=classic;startFill=1;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" source="33" target="10" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="/persons/&amp;lt;person_id&amp;gt;/connection" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.service_endpoint;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="-390" y="800" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="Consume new location data" style="edgeStyle=none;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" source="36" target="12" edge="1">
+                    <mxGeometry x="-0.5248" y="20" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" value="Message Queue&amp;nbsp;&lt;br&gt;Kafka" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#FFFFFF;labelBackgroundColor=none;fillColor=none;strokeColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="-210" y="500" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="&lt;b&gt;Justification&lt;/b&gt;&lt;span style=&quot;&quot;&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;&quot;&gt;Because it is expected from the business context that the volume of location data will be large, to allow better scalability of the location service the processing of new location data is decoupled from the user interaction. Here the message queue technology is chosen.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;REST is used for the interaction between the frontend and backend, because REST is used in the PoC and there is no business needs currently that requires other technologies for the message passing between backend and frontend.&lt;/li&gt;&lt;li&gt;gRPC is used for the fetching of data from other backend services. Because a large volume of person data is to be digested, it is more efficient to use a binary protocol like gRPC.&lt;/li&gt;&lt;/ul&gt;&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="630" width="400" height="390" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="retreave Location" style="edgeStyle=none;jumpStyle=arc;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" source="2" target="6" edge="1">
+                    <mxGeometry x="0.2142" y="-5" relative="1" as="geometry">
+                        <mxPoint x="451" y="830" as="sourcePoint"/>
+                        <mxPoint x="797.5" y="577.5" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" value="REST" style="edgeStyle=none;jumpStyle=arc;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endArrow=classic;endFill=1;entryX=-0.007;entryY=0.437;entryDx=0;entryDy=0;entryPerimeter=0;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" source="53" target="54" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Frontend" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;fontColor=#FFFFFF;labelBackgroundColor=none;strokeColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="-850" y="410" width="230" height="120" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
