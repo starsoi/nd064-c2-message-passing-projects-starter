@@ -9,7 +9,7 @@ from app.config import SERVICE_URL_KAFKA
 
 app = create_app(os.getenv("FLASK_ENV") or "test")
 
-kafka_consumer = KafkaConsumer('udaconnect-location', bootstrap_servers=SERVICE_URL_KAFKA)
+kafka_consumer = KafkaConsumer('udaconnect-location', bootstrap_servers=SERVICE_URL_KAFKA, value_deserializer=lambda m: json.loads(m.decode('utf-8')))
 
 def kafka_worker():
     print('kafka worker started.')
