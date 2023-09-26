@@ -8,5 +8,6 @@ RUN tar -xzf kafka_2.13-3.5.0.tgz
 
 WORKDIR ./kafka_2.13-3.5.0
 COPY start-kafka.sh .
+COPY server.properties config/
 
 CMD ["/bin/sh", "start-kafka.sh"]
